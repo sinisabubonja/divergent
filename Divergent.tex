@@ -1,0 +1,272 @@
+\documentclass[12pt]{article}
+
+\usepackage[pdftex,pagebackref,letterpaper=true,colorlinks=true,pdfpagemode=none,urlcolor=blue,linkcolor=blue,citecolor=blue,pdfstartview=FitH]{hyperref}
+\usepackage{amsmath, amssymb, graphics, setspace}
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage{pifont}
+\usepackage[usenames, dvipsnames]{color}
+
+\usepackage{amsmath,amsfonts}
+\usepackage{graphicx}
+\usepackage{color}
+
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+
+
+\setlength{\oddsidemargin}{0pt}
+\setlength{\evensidemargin}{0pt}
+\setlength{\textwidth}{6.0in}
+\setlength{\topmargin}{0in}
+\setlength{\textheight}{8.5in}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{5px}
+
+
+
+% This first part of the file is called the PREAMBLE. It includes
+% customizations and command definitions. The preamble is everything
+% between \documentclass and \begin{document}.
+
+%%\usepackage[margin=1in]{geometry}  % set the margins to 1in on all sides
+%%\usepackage{graphicx}              % to include figures
+%%\usepackage{amsmath}               % great math stuff
+%%\usepackage{amsfonts}              % for blackboard bold, etc
+%%\usepackage{amsthm}                % better theorem environments
+
+
+% various theorems, numbered by section
+
+%%\newtheorem{def}{Definition}[section]
+
+
+%%\newtheorem{lem}[thm]{Lemma}
+%%\newtheorem{prop}[thm]{Proposition}
+%%\newtheorem{cor}[thm]{Corollary}
+%%\newtheorem{conj}[thm]{Conjecture}
+
+%%\DeclareMathOperator{\id}{id}
+
+%%\newcommand{\bd}[1]{\mathbf{#1}}  % for bolding symbols
+%%\newcommand{\RR}{\mathbb{R}}      % for Real numbers
+%%\newcommand{\ZZ}{\mathbb{Z}}      % for Integers
+%%\newcommand{\col}[1]{[\begin{matrix} #1 \end{matrix} ]}
+%%\newcommand{\comb}[2]{\binom{#1^2 + #2^2}{#1+#2}}
+
+
+
+\def\B{\{0,1\}}
+\def\xor{\oplus}
+
+\def\P{{\mathbb P}}
+\def\E{{\mathbb E}}
+\def\var{{\bf Var}}
+
+\def\N{{\mathbb N}}
+\def\Z{{\mathbb Z}}
+\def\R{{\mathbb R}}
+\def\Co{{\mathbb C}}
+\def\Q{{\mathbb Q}}
+\def\eps{{\epsilon}}
+
+\def\bz{{\bf z}}
+
+\def\true{{\tt true}}
+\def\false{{\tt false}}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{de}{Definition}[section]
+\newtheorem{ex}{Example}[section]
+\newenvironment{proof}{\noindent {\sc Proof:}}{$\Box$ \medskip} 
+
+
+
+\title{Area of Torricelli\textsc{\char13}s Trumpet or Gabriel\textsc{\char13}s Horn, Sum of the Reciprocals of the Primes, Factorials of Negative Integers}
+\author{Sinisa Bubonja}
+
+\date{30.12.2016.}
+
+\begin{document}
+
+\maketitle
+\begin{abstract}
+In our previous work \cite{bub}, we defined the method for computing general limits of functions at their singular points and showed that it is useful for calculating divergent integrals, the sum of divergent series and values of functions in their singular points. In this paper, we have described that method and we will use it to calculate the area of Torricelli\textsc{\char13}s trumpet or Gabriel\textsc{\char13}s horn, the sum of the reciprocals of the primes and factorials of negative integers.
+\end{abstract}
+
+\tableofcontents  
+  
+\section{Introduction}
+\label{section:intro}
+
+Divergent series and divergent integrals have appeared in mathematics for a long time. Mathematicians have devised various means of assigning finite values to such series and integrals, although intuition suggests that the answer is infinity or it does not exist. Method for computing general limits of functions at their singular points, discovered in our previous work \cite{bub}, will permit us to use the method of partial sums for calculating sums of divergent series and Newton - Leibniz formula for calculating divergent integrals, which is the new and surprising result. We also showed that our method is the strongest method around for summing divergent series and it is superior to other known methods; for more details we refer the reader to \cite{mat}. As for prerequisites, the reader is expected to be familiar with real and complex analysis in one variable.\\
+
+In Section \ref{section:meth} we describe the method for computing general limits of functions at their singular points and show how that method may be used for assigning finite values to divergent series and divergent integrals. In this section, we present definitions and theorems with proofs because paper, \cite{bub} where the method is discovered, is not written in English.\\
+
+In Sections \ref{section:area}, \ref{section:sum} and \ref{section:fact} we have compiled some of the standard facts on an area of Torricelli\textsc{\char13}s trumpet or Gabriel\textsc{\char13}s horn, the sum of the reciprocals of the primes and factorials of negative integers, respectively. In those sections, we assign finite values to an infinite area of Torricelli\textsc{\char13}s trumpet or Gabriel\textsc{\char13}s horn, the sum of divergent series of the reciprocals of the primes and Gamma function at their singular points, respectively. Gamma function extends factorials to real and even complex numbers. The gamma function is undefined for zero and negative integers, from which we can conclude that factorials of negative integers do not exist.
+
+
+\section{Method for Computing General Limits of Functions at Their Singular Points}
+\label{section:meth}
+
+\begin{de}
+Let $f$ be a function and has a series expansion about the point $a \in \Co\bigcup\infty$. We will denote by $\lim_{z\to a}^D f(z)$ the general limit of function $f$ at point $a$ and define $$lim_{z\to a}^D f(z)=c,$$ where $c$ is constant term of any series expansion of $f$ about $a$.
+\end{de}
+
+\begin{ex}
+The series expansions of $\sin z$, $\cos z$ and $e^z$ at infinity are same these functions and we considered that constant terms of their series expansions are $0$. By previous definition, $$\lim_{z\to \infty}^D \sin z=\lim_{z\to \infty}^D \cos z=\lim_{z\to \infty}^D e^z=0.$$
+\end{ex}
+
+\begin{ex}
+Let us find the general limit of Riemann zeta function as z approaches 1.
+The Laurent series expansions of a function $\zeta(z)$ about $z=1$ is the series $\frac{1}{z-1}+\gamma-\gamma _1(z-1)+\frac{1}{2}\gamma _2(z-1)^2-\frac{1}{6}\gamma_3(z-1)^3+\frac{1}{24}\gamma_4(z-1)^4+O((z-1)^5)$, where $\gamma$ is Euler-Mascheroni constant and $\gamma_n$ is the nth Stieltjes constant. By previous definition, $$\lim_{z\to 1}^D \zeta(z)=\gamma.$$
+\end{ex}
+
+\begin{de}
+Let $f$ be a function and has a series expansion about the point $\infty$. We will denote by $\lim^D_{z\to\infty(\alpha)}f(z)$, $\lim^D_{z\to\infty(\alpha)^+}f(z)$ and $\lim^D_{z\to\infty(\alpha)^-}f(z)$ the general limit, upper general limit and lower general limit  of a function f(z) as z approaches to $\infty$ over radial line $l_{\alpha, \infty}=\{r\cdot e^{i\alpha}|r\in \R\}$, $\alpha\in[0,2\pi)$, respectively, and define
+
+$$\lim^D_{z\to\infty(\alpha)^+}f(z)=\lim^D_{z\to+e^{i\alpha}\infty}f(z)=\lim^D_{r\to\infty(0)^+}f(r\cdot e^{i\alpha})=\lim^D_{r\to +\infty}f(r\cdot e^{i\alpha}),$$ 
+$$\lim^D_{z\to\infty(\alpha)^-}f(z)=\lim^D_{z\to-e^{i\alpha}\infty}f(z)=\lim^D_{r\to\infty(0)^-}f(r\cdot e^{i\alpha})=\lim^D_{r\to -\infty}f(r\cdot e^{i\alpha}),$$
+$$\lim^D_{z\to\infty(\alpha)}f(z)=\frac{1}{2}(\lim^D_{z\to\infty(\alpha)^+}f(z)+\lim^D_{z\to\infty(\alpha)^-}f(z))=\lim^D_{r\to\infty(0)}f(r\cdot e^{i\alpha}).$$
+\end{de}
+
+\begin{de}
+Let $f$ be a function and has a series expansion about the point $a\in\Co$. We will denote by $\lim^D_{z\to a(\alpha)}f(z)$, $\lim^D_{z\to a(\alpha)^+}f(z)$ and $\lim^D_{z\to a(\alpha)^-}f(z)$ the general limit, upper general limit and lower general limit  of a function f(z) as z approaches to $a$ over radial line $l_{\alpha,a}=\{a+r\cdot e^{i\alpha}|r\in \R\}$, $\alpha\in[0,2\pi)$, respectively, and define
+
+$$\lim^D_{z\to a(\alpha)^+}f(z)=\lim^D_{z\to a+e^{i\alpha 0}}f(z)=\lim^D_{r\to 0(0)^+}f(a+r\cdot e^{i\alpha})=\lim^D_{r\to 0^+}f(a+r\cdot e^{i\alpha}),$$ 
+$$\lim^D_{z\to a(\alpha)^-}f(z)=\lim^D_{z\to a-e^{i\alpha 0}}f(z)=\lim^D_{r\to 0(0)^-}f(a+r\cdot e^{i\alpha})=\lim^D_{r\to 0^-}f(a+r\cdot e^{i\alpha}),$$ 
+$$\lim^D_{z\to a(\alpha)}f(z)=\frac{1}{2}(\lim^D_{z\to a(\alpha)^+}f(z)+\lim^D_{z\to a(\alpha)^-}f(z))=\lim^D_{r\to 0(0)}f(a+r\cdot e^{i\alpha}).$$
+\end{de}
+
+\begin{de}
+Let $f$ be a function and has a pole of order $m\in \N$ at $a \in \Co\bigcup\infty$. Define 
+$$ lim_{z\to +\infty}^D P_n(z)=\int_{-1}^0 P_n(z) dz,$$ 
+$$lim_{z\to -\infty}^D P_n(z)=\int_0^1 P_n(z) dz,$$  
+$$lim_{z\to \infty(0)}^D P_n(z)=\frac{1}{2}\int_{-1}^1 P_n(z) dz,$$ 
+$$ lim_{z\to 0^{+}}^D P_n\Big(\frac{1}{z}\Big)=\int_{-\infty}^{-1} P_n\Big(\frac{1}{z}\Big)\cdot\frac{1}{z^2} dz,$$ $$lim_{z\to 0^{-}}^D P_n\Big(\frac{1}{z}\Big)=\int_1^{+\infty} P_n\Big(\frac{1}{z}\Big)\cdot\frac{1}{z^2} dz,$$  $$lim_{z\to 0(0)}^D P_n\Big(\frac{1}{z}\Big)=\frac{1}{2}\int_{1}^{-1} P_n\Big(\frac{1}{z}\Big)\cdot\frac{1}{z^2} dz,$$ 
+$$\lim_{z\to a(\alpha)}^{D}f(z)=\lim_{z\to a(\alpha)}^{D} F_1(z)+c_0,$$ 
+where $P_n(z)=a_nz^n+a_{n-1}z^{n-1}+\cdot \cdot \cdot +a_1z+a_0$ is polynomial of degree $n\geq 0$, $c_0$ is a constant term and $F_1(z)$ is the principal part of a Laurent series expansion of $f$ at $a$.
+\end{de}
+
+\begin{ex}
+Let us find the general limit of a Riemann zeta function as z approaches 1 over radial line $l_{0, 1}$, where $l_{0, 1}$ is  real axis. The Laurent series expansions of a function $\zeta(z)$ about $z=1$ is the series $\frac{1}{z-1}+\gamma-\gamma_1(z-1)+\frac{1}{2}\gamma_2(z-1)^2-\frac{1}{6}\gamma_3(z-1)^3+\frac{1}{24}\gamma _4(z-1)^4+O((z-1)^5)$, where $\gamma$ is Euler-Mascheroni constant and $\gamma_n$ is the nth Stieltjes constant. By previous definitions, $$\lim_{z\to 1(0)}^D \zeta(z)=\lim_{z\to 1(0)}^D\frac{1}{z-1}+\gamma=\lim_{r\to 0(0)}^D\frac{1}{1+r-1}+\gamma=\frac{1}{2}\int_{1}^{-1} \frac{1}{r}\cdot\frac{1}{r^2} dr+\gamma=0+\gamma=\gamma.$$
+\end{ex}
+
+\begin{ex}
+Let us find the sum of divergent series $\sum_{n=1}^{\infty}1=1+1+1+1+\cdot\cdot\cdot +1+\cdot\cdot\cdot$. Thus, by previous definition, $$\sum_{n=1}^{\infty}1=\lim^D_{m\to+\infty}\sum_{n=1}^m 1=\lim^D_{m\to+\infty}m=\int_{-1}^0 m dm=\frac{-1}{2}.$$ 
+\end{ex}
+
+\begin{ex}
+Let us find the sum of divergent series $\sum_{n=1}^{\infty}n^k=1^k+2^k+3^k+4^k+\cdot\cdot\cdot +m^k+\cdot\cdot\cdot$,  where $k$ is positive integer. By Faulhaber's formula, $\sum_{n=1}^{m}n^k=\frac{1}{k+1}\sum_{n=0}^k (-1)^n{{k+1}\choose{n}} B_n m^{k+1-n}$ since $B_1=-\frac{1}{2}$, where $B_n$ denotes the nth Bernoulli number. Therefore  $\sum_{n=1}^{\infty}n^k= \lim^D_{m\to+\infty}\sum_{n=1}^m n^k=
+\lim^D_{m\to+\infty}(\frac{1}{k+1}\sum_{n=0}^k (-1)^n{{k+1}\choose{n}} B_n m^{k+1-n})= 
+\int_{-1}^0(\frac{1}{k+1}\sum_{n=0}^k (-1)^n{{k+1}\choose{n}} B_n  m^{k+1-n})dm=
+\frac{1}{k+1}\sum_{n=0}^k (-1)^n{{k+1}\choose{n}} B_n  \int_{-1}^0 m^{k+1-n}dm=
+-\frac{1}{k+1}\sum_{n=0}^k (-1)^n{{k+1}\choose{n}} B_n \frac{(-1)^{k+2-n}}{k+2-n}=
+-\frac{1}{k+1}\sum_{n=0}^k {{k+1}\choose{n}} B_n \frac{(-1)^{k}}{k+2-n}=
+\frac{(-1)^{k}}{k+1}\cdot(-\sum_{n=0}^k {{k+1}\choose{n}} \frac{B_n}{k+2-n})=
+\frac{(-1)^{k}}{k+1}\cdot B_{k+1}$ by recurrence equation for Bernoulli numbers and previous definition.
+We have $$\sum_{n=1}^{\infty}n^k=-\frac{B_{k+1}}{k+1}$$ since $k\in \N$, because the odd Bernoulli numbers are zero.
+\end{ex}
+
+\begin{thm}
+If $f$ is a function and has a pole of order 1 at $a \in \Co\bigcup\infty$ and if $c_0$ is a constant term of a Laurent series expansion of $f$ at $a$, then $$\lim^D_{z\to a(\alpha)}f(z)=c_0,\ \alpha\in[0,2\pi).$$
+\end{thm}
+
+\begin{proof}
+By previous definition,
+$\lim^D_{z\to a(\alpha)}f(z)=\lim^D_{z\to a(\alpha)}F_1(z)+c_0=
+\lim^D_{z\to a(\alpha)}\frac{c_{-1}}{z-a}+c_0=\lim^D_{r\to 0(0)}\frac{c_{-1}}{a+re^{i\alpha}-a}+c_0=
+\frac{1}{2}\int_1^{-1}\frac{c_{-1}}{re^{i\alpha}}\cdot\frac{1}{r^2}dr+c_0=\frac{c_{-1}}{2e^{i\alpha}}\int_1^{-1}\frac{1}{r^3}dr+c_0 
+=0+c_0=c_0$, where $F_1(z)$ is the principal part of a Laurent series expansion of $f$ at $a$.
+Similarly we can prove that the theorem holds for $a=\infty$.
+\end{proof}
+
+\begin{ex}
+Let us find the general limit of a Gamma function, denoted by $\Gamma(z)$, as z approaches 0 over radial line $l_{0, 0}$, where $l_{0, 0}$ is  real axis. The Laurent series expansions of a function $\Gamma(z)$ about $z=0$ is the series $\frac{1}{z}-\gamma+\frac{1}{12}(6\gamma^2+\pi^2)z+\frac{1}{6}z^2(-\gamma^3-\frac{\gamma\pi^2}{2}+\mit\psi^{(2)}(1))+\frac{1}{24}z^3(\gamma^4+\gamma^2\pi^2+\frac{3\pi^4}{20}-4\gamma\mit\psi^{(2)}(1))+\frac{1}{1440}z^4(-12\gamma^5-20\gamma^3\pi^2-9\gamma\pi^4+120\gamma^2\mit\psi^{(2)}(1)+20\pi^2\mit\psi^{(2)}(1)+12\mit\psi^{(4)}(1))+O(z^5)$, where $\gamma$ is Euler-Mascheroni constant and $\mit\psi^{(2)}(z)$ is the nth derivative of the digamma function. By previous theorem, $$\lim_{z\to 0(0)}^D \Gamma(z)=\lim_{z\to 0}^D \Gamma(z)=-\gamma.$$
+\end{ex}
+
+\begin{de}
+Let $f$ be a function and has a series expansion about the point $a \in \Co\bigcup\infty$ and does not have a pole at $a$. $$\lim^D_{z\to a(\alpha)^+}f(z)=c\ (\lim^D_{z\to a(\alpha)^-}f(z)=c)$$ if $\lim_{z\to a(\alpha)^+}f(z)$ $(\lim_{z\to a(\alpha)^-}f(z))$ is infinite or does not exist, where $c$ is a constant term of any series expansion of $f$ about $a$; otherwise
+
+$$\lim^D_{z\to a(\alpha)^+}f(z)=\lim_{z\to a(\alpha)^+}f(z)\ (\lim^D_{z\to a(\alpha)^-}f(z)=\lim_{z\to a(\alpha)^-}f(z)).$$
+\end{de}
+
+\begin{ex}
+Let us find the sum of the harmonic series which are divergent. We have $\sum_{n=1}^{\infty}\frac{1}{n}=\lim^D_{m\to+\infty}\sum_{n=1}^m \frac{1}{n}=\lim^D_{m\to+\infty}H_m$, where $H_m$ is harmonic number. Therefore, by previous definition, $$\sum_{n=1}^{\infty}\frac{1}{n}=\gamma,$$ where $\gamma$ is Euler-Mascheroni constant, because the series expansions of a function $H_m$ about $m=\infty$ is the series $(\gamma-\ln(\frac{1}{m}))+\frac{1}{2m}-\frac{1}{12m^2}+\frac{1}{120m^4}-\frac{1}{252m^6}+O((\frac{1}{m})^7)$, where $\ln(x)$ is natural logarithm.
+\end{ex}
+
+\begin{ex}
+Let us find the sum of divergent series $\sum_{n=1}^{\infty}(n-1)!=0!+1!+2!+3!+\cdot\cdot\cdot +(n-1)!+\cdot\cdot\cdot$. We have $\sum_{n=1}^{\infty}(n-1)!=\lim^D_{m\to+\infty}\sum_{n=1}^m (n-1)!=\lim^D_{m\to+\infty}(-1)^m m!!(-m-1)+!(-2)+1$, where $n!!$ is the double factorial function and $!n$ is subfactorial function. Therefore, by previous definition, $$\sum_{n=1}^{\infty}(n-1)!\approx 0.697175 + 1.15573 \cdot i,$$ because the constant term of a series expansion of function $(-1)^m m!!(-m-1)+!(-2)+1$ about $\infty$ are $1+\frac{\Gamma(-1,-1)}{e}=0.69717488323506606876547868191955159531717543095436951732...+1.1557273497909217179100931833126962991208510231644158204... \cdot i$, where $\Gamma(a,z)$ is the incomplete gamma function.
+\end{ex}
+
+\begin{ex}
+Let us find the finite value of divergent integral $\int_0^{+\infty} \sin x dx$. We have $\int_0^{+\infty} \sin x dx=(-\cos x)|_0^{+\infty}=\lim^D_{x\to+\infty}(-\cos x)+\cos 0$. Thus, by previous definition, $$\int_0^{+\infty} \sin x dx=0+1=1,$$ because the series expansions of $-\cos x$ at $\infty$ are $-\cos x=-\cos x+0$.
+\end{ex}
+
+\begin{ex}
+Let us find the finite value of divergent integral $\int_0^{+\infty} \ln x \sin x dx$, where $\ln x$ is natural logarithm. We have $\int_0^{+\infty} \ln x \sin x dx=(Ci(x)-\ln x \cos x) |_0^{+\infty}=\lim_{x\to+\infty}^D(Ci(x)-\ln x \cos x)-\lim_{x\to 0}^D(Ci(x)-\ln x \cos x)=0-\gamma=-\gamma$, where $Ci(x)$ is cosine integral and $\gamma$ is Euler-Mascheroni constant. Thus, by previous definition, $$\int_0^{+\infty} \ln x \sin x dx=0-\gamma=-\gamma,$$ because the series expansions of $Ci(x)-\ln x\cos x$ at $\infty$ are $\cos x(\ln\frac{1}{x}+O((\frac{1}{x})^7))+\cos x(-(\frac{1}{x})^2+\frac{6}{x^4}-\frac{120}{x^6}+O((\frac{1}{x})^7))+\sin x(\frac{1}{x}-\frac{2}{x^3}+\frac{24}{x^5}+O((\frac{1}{x})^7))+O((\frac{1}{x})^9)-i\pi\lfloor\frac{1}{2}-\frac{arg(x)}{\pi}\rfloor+0$ and the series expansions of $Ci(x)-\ln x\cos x$ at $0$ are $\gamma+\frac{1}{4}x^2(2\ln x-1)+\frac{1}{96}x^4(1-4\ln x)+\frac{1}{4320}x^6(6\ln x-1)+O(x^7)$.
+\end{ex}
+
+\begin{thm}
+If $f$ is a function and has a pole of order $m\in \N$ at $a \in \Co\bigcup\infty$ and if $c_0$ is a constant term of a Laurent series expansion of $f$ at $a$, then $lim_{z\to a}^D f(z)$ is a mean value of general limits $\lim^D_{z\to a(\alpha)}f(z)$, $\alpha\in[0,2\pi)$.
+\end{thm}
+
+\begin{proof}
+Let us first prove that the theorem holds for $a \in \Co$.
+By previous definitions and the first mean value theorem for definite integrals,
+$\lim^D_{z\to a}f(z)=\frac{1}{2\pi}\cdot\int_0^{2\pi}\lim^D_{z\to a(\alpha)}f(z)d\alpha=
+\frac{1}{2\pi}\cdot\int_0^{2\pi} \lim^D_{z\to a(\alpha)}F_1(z)d\alpha+c_0= 
+\frac{1}{2\pi}\cdot\int_0^{2\pi} \frac{1}{2}(\lim^D_{z\to a(\alpha)^+}F_1(z)+\lim^D_{z\to a(\alpha)^-}F_1(z))d\alpha+c_0=
+\frac{1}{2\pi}\cdot\int_0^{2\pi} \frac{1}{2}(\lim^D_{r\to 0^+}F_1(a+re^{i\alpha})+\lim^D_{z\to a(\alpha)^-}F_1(a+re^{i\alpha}))d\alpha+c_0=
+\frac{1}{2\pi}\cdot\int_0^{2\pi} \frac{1}{2}(\lim^D_{r\to 0^+}\sum_{k=-m}^{-1}c_k(a+re^{i\alpha}-a)^k+\lim^D_{r\to 0^+}\sum_{k=-m}^{-1}c_k(a+re^{i\alpha}-a)^k)d\alpha+c_0=
+\frac{1}{2\pi}\cdot\int_0^{2\pi} \frac{1}{2}(\int_{-\infty}^{-1}\sum_{k=-m}^{-1}c_k(re^{i\alpha})^kdr+\int_1^{+\infty}\sum_{k=-m}^{-1}c_k(re^{i\alpha})^kdr)d\alpha+c_0=
+\frac{1}{2\pi}\cdot\int_0^{2\pi}\frac{1}{2}\sum_{k=-n}^{-1} c_k \frac{1+(-1)^k}{-k+1} e^{i\alpha k}d\alpha+c_0=
+\frac{1}{2\pi}\cdot\frac{1}{2}\sum_{k=-n}^{-1} c_k \frac{1+(-1)^k}{-k+1} \int_0^{2\pi}e^{i\alpha k}d\alpha+c_0=
+0+c_0=c_0$, where $F_1(z)$ is the principal part of a Laurent series expansion of $f$ at $a$.
+Similarly we can prove that the theorem holds for $a=\infty$.
+\end{proof}
+
+\section{Area of Torricelli's Trumpet or Gabriel's Horn}
+\label{section:area}
+
+Torricelli's Trumpet, also called Gabriel's Horn, a mathematical figure that stretched to infinity but was not infinitely big is the surface of revolution obtained by rotating the graph of the function $f(x)=\frac{1}{x}$ on the interval $[1,\infty)$ around the $x$-axis. Using integration, it is possible to find the surface area A: 
+$$A=2\pi\int_1^{+\infty}\frac{1}{x}\cdot\sqrt{1+\Big[\Big(\frac{1}{x}\Big)'\Big]^2}dx=2\pi\int_1^{+\infty}\frac{1}{x}\cdot\sqrt{1+\frac{1}{x^4}}dx\geq2\pi\int_1^{+\infty}\frac{1}{x}dx=+\infty.$$
+
+Let us find the finite value of divergent integral $A=2\pi\int_1^{+\infty}\frac{1}{x}\cdot\sqrt{1+\frac{1}{x^4}}dx$. We have $2\pi\int_1^{+\infty}\frac{1}{x}\cdot\sqrt{1+\frac{1}{x^4}}dx=2\pi\left(\frac{\sqrt{\frac{1}{x^4}+1}x^2\sinh ^{-1}\left(x^2\right)}{2\sqrt{x^4+1}}-\frac{1}{2}\sqrt{\frac{1}{x^4}+1}\right)\Big|_1^{+\infty}.$
+Thus, $\lim^D_{x\to +\infty}2\pi\Big(\frac{\sqrt{\frac{1}{x^4}+1}x^2\sinh^{-1}(x^2)}{2\sqrt{x^4+1}}-\frac{1}{2} \sqrt{\frac{1}{x^4}+1}\Big)-\lim_{x\to 1}2\pi\Big(\frac{\sqrt{\frac{1}{x^4}+1}x^2\sinh^{-1}(x^2)}{2\sqrt{x^4+1}}-\frac{1}{2}\sqrt{\frac{1}{x^4}+1}\Big)=\frac{1}{2}\pi\ln(4)-\pi-2\pi(\frac{1}{2}\sinh ^{-1}(1)-\frac{1}{\sqrt{2}})\approx 0.70996$, where $\ln(x)$ is natural logarithm and $\sinh^{-1}(x)$ is the inverse hyperbolic sine function,
+because the series expansions of $2 \pi  \Big(\frac{\sqrt{\frac{1}{x^4}+1}x^2\sinh^{-1}\left(x^2\right)}{2\sqrt{x^4+1}}-\frac{1}{2} \sqrt{\frac{1}{x^4}+1}\Big)$ at $\infty$ are
+$(-2\pi\ln(\frac{1}{x})-\pi+\frac{1}{2}\pi\ln(4))-\frac{\pi}{4x^4}+\frac{\pi}{32x^8}+O((\frac{1}{x})^{11})$.
+This gives $$A=0.70995...$$.
+\section{Sum of the Reciprocals of the Primes}
+\label{section:sum}
+
+The sum of the reciprocals of all prime numbers diverges. This was proved by Leonhard Euler in 1737, and strengthens Euclid's 3rd-century-BC result that there are infinitely many prime numbers.
+We will denote by $p_n$ nth prime number.
+Let us find the sum of series $\sum_{n=1}^{+\infty}\frac{1}{p_n}$. We have $\sum_{n=1}^{\infty}\frac{1}{p_n}=\lim^D_{m\to+\infty}\sum_{n=1}^m \frac{1}{p_n}=\lim^D_{s\to 1}P(s)$, where $P(s)\equiv\displaystyle\sum_{p\ is\ prime}\frac{1}{p^s}$ is the prime zeta function. For $s$ close to 1, $P(s)$ has the expansion $P(1+\epsilon)=-\ln\epsilon+C+O(\epsilon)$, where $\epsilon\geq 0$ and $C=\sum_{n=2}^{+\infty} \frac{\mu(n)}{n}\ln\zeta(n)=M-\gamma=0.261497212...-0.577215664...=-0.315718452...$, where $M$ is Meissel-Mertens constant, $\gamma$ is Euler-Mascheroni constant, $\mu(k)$ is the M\"{o}bius function, $\zeta(n)$ is the Riemann zeta function and $\ln(x)$ is natural logarithm.
+Therefore, $\sum_{n=1}^{+\infty}\frac{1}{p_n}=\lim^D_{\epsilon\to 0}P(1+\epsilon)=\lim^D_{\epsilon\to 0}(-\ln\epsilon+C+O(\epsilon))=C$ because the series expansions of a function $-\ln\epsilon+C+O(\epsilon)$ about $\epsilon=0$ is the series $(C+\ln (\epsilon))+O\left(\epsilon^1\right)$.
+This gives $$\sum_{n=1}^{+\infty}\frac{1}{p_n}=M-\gamma=-0.315718452...$$.
+
+\section{Factorials of Negative Integers}
+\label{section:fact} 
+
+The gamma function was first introduced by Leonhard Euler in his goal to generalize the factorial to non integer values. The (complete) gamma function $\Gamma(z)=\int_0^{+\infty}x^{z-1}e^{-x}dx$ is defined to be an extension of the factorial to complex and real number arguments. It is analytic everywhere except at $z=0, -1, -2, ...$, where it has a poles of order 1. It is related to the factorial by $\Gamma(n+1)=(n)!$ as special case of functional equation $\Gamma(z+1)=z\Gamma(z)$. Gamma function is not the only solution of the previous functional equation.
+Let us find the factorials of negative numbers as the general limit of a gamma function as $z$ approaches $-n$, where $n$ are positive integers. We have $(-n)!=\lim^D_{z\to -n}\Gamma(z)=c(n)$, where $c(n)$ denote the constant term of the Laurent series expansion of a function $\Gamma(z)$ about $z=-n$.
+This gives $$(-1)!=-1+\gamma,$$ $$(-2)!=\frac{3}{4}-\frac{\gamma}{2},$$ $$(-3)!=-\frac{11}{36}+\frac{\gamma}{6},$$ $$(-4)!=\frac{25}{288}-\frac{\gamma}{24},$$..., where $\gamma$ is Euler-Mascheroni constant.
+
+
+\begin{thebibliography}{9}
+
+
+\bibitem{bub} Sinisa Bubonja, {\it General Method for Summing Divergent Series. Determination of Limits of Divergent Sequences and Functions in Singular Points}, Preprint, viXra:1502.0074
+\bibitem{mat} Sinisa Bubonja, {\it General Method for Summing Divergent Series Using Mathematica and a Comparison to Other Summation Methods}, Preprint, viXra:1511.0247
+\bibitem{har} G. H. Hardy, {\it Divergent series}, Oxford at the Clarendon Press (1949) 
+\bibitem{ram} Bruce C. Brendt, {\it Ramanujan's Notebooks}, Springer-Verlag New York Inc. (1985)
+\bibitem{tuc} John Tucciarone, {\it The Development of the Theory of Summable Divergent Series from 1880 to 1925}, Archive for History of Exact Sciences, Vol. 10, No. 1/2, (28.VI.1973), 1-40
+
+
+
+\end{thebibliography}
+
+
+\end{document}
